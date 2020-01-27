@@ -12,10 +12,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/StringCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/StringCalculator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/StringCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StringCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StringCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StringCalculatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,26 +151,31 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1579977986869" />
-    <state width="637" height="223" key="GridCell.Tab.0.bottom" timestamp="1580053210353">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1320" height="123" key="GridCell.Tab.0.bottom" timestamp="1580130003579">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state width="637" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580053210353" />
-    <state width="637" height="223" key="GridCell.Tab.0.center" timestamp="1580053210353">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1320" height="123" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1580130003579" />
+    <state width="1320" height="123" key="GridCell.Tab.0.center" timestamp="1580130003578">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state width="637" height="223" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580053210353" />
-    <state width="637" height="223" key="GridCell.Tab.0.left" timestamp="1580053210353">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1320" height="123" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1580130003578" />
+    <state width="1320" height="123" key="GridCell.Tab.0.left" timestamp="1580130003577">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state width="637" height="223" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580053210353" />
-    <state width="637" height="223" key="GridCell.Tab.0.right" timestamp="1580053210353">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1320" height="123" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1580130003577" />
+    <state width="1320" height="123" key="GridCell.Tab.0.right" timestamp="1580130003578">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state width="637" height="223" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580053210353" />
-    <state x="721" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1580031041008">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1320" height="123" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1580130003578" />
+    <state x="678" y="221" key="com.intellij.ide.util.TipDialog" timestamp="1580108322173">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="721" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1580031041008" />
+    <state x="678" y="221" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1580108322173" />
     <state x="454" y="66" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1579977463900">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
