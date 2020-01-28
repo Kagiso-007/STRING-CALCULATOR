@@ -3,9 +3,9 @@ import java.util.regex.PatternSyntaxException;
 public class StringCalculator {
     static int add(String input) throws IllegalArgumentException{
         int sum = 0;
-        String[] values = new String[0];
-        String[] delimiters = new String[0];
-        String delimiter = "";
+        String[] values;
+        String[] delimiters;
+        String delimiter;
         StringBuilder invalidValues = new StringBuilder();
         if(input.equals("")){
             return 0;
@@ -14,37 +14,39 @@ public class StringCalculator {
         }else if(input.startsWith("//")){
             String[] str = input.split("\n");
             if(Pattern.compile("[/]{2}(\\[).+(])(\\[).+(])").matcher(str[0]).matches()) {
-                delimiters = str[0].split("]");
+                String d = str[0].substring(2);
+                delimiters = d.split("]");
                 StringBuilder delimit1 = new StringBuilder();
                 StringBuilder delimit2 = new StringBuilder();
                 for (String a : delimiters) {
-                    a = a.substring(1);
-                    if(a.equals(delimiters[delimiters.length-1])){
-                        delimit1.append("(").append(a).append(")");
-                        delimit2.append("[").append(a).append("]");
-                    }else{
-                        delimit1.append("(").append(a).append(")").append("|");
-                        delimit2.append("[").append(a).append("]").append("|");
+                        if (a.equals(delimiters[delimiters.length - 1])) {
+                            a = a.substring(1);
+                            delimit1.append("(").append(a).append(")");
+                            delimit2.append("[").append(a).append("]").append("{1,}");
+                        } else {
+                            a = a.substring(1);
+                            delimit1.append("(").append(a).append(")").append("|");
+                            delimit2.append("[").append(a).append("]").append("{1,}").append("|");
+                        }
+                    System.out.println(delimit2);
+                }
+                    try {
+                        values = Pattern.compile(delimit1.toString()).split(str[1]);
+                    } catch (PatternSyntaxException e) {
+                        values = Pattern.compile(delimit2.toString()).split(str[1]);
                     }
-                }
-                try {
-                    values = Pattern.compile(delimit1.toString()).split(str[1]);
-                } catch (PatternSyntaxException e) {
-                    values = Pattern.compile(delimit2.toString().substring(delimiter.length() - 1) + "]{" + delimiter.length() + "}").split(str[1]);
-                }
             }else {
                 delimiter = str[0].substring(2);
-            }
-            try {
-                values = Pattern.compile("(" + delimiter + ")").split(str[1]);
-            } catch (PatternSyntaxException e) {
-                values = Pattern.compile("[" + delimiter.substring(delimiter.length() - 1) + "]{" + delimiter.length() + "}").split(str[1]);
+                try {
+                    values = Pattern.compile("(" + delimiter + ")").split(str[1]);
+                } catch (PatternSyntaxException e) {
+                    values = Pattern.compile("[" + delimiter.substring(delimiter.length() - 1) + "]{" + delimiter.length() + "}").split(str[1]);
+                }
             }
         }else {
             values = input.split(",");
         }
         for (String a: values) {
-            System.out.println(a);
             if(Integer.parseInt(a)<0){
                 invalidValues.append(a).append(",");
             }else if(Integer.parseInt(a)>= 1000){
