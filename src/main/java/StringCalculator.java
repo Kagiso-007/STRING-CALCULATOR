@@ -15,16 +15,22 @@ public class StringCalculator {
             String[] str = input.split("\n");
             if(Pattern.compile("[/]{2}(\\[).+(])(\\[).+(])").matcher(str[0]).matches()) {
                 delimiters = str[0].split("]");
-                String
-                String
+                StringBuilder delimit1 = new StringBuilder();
+                StringBuilder delimit2 = new StringBuilder();
                 for (String a : delimiters) {
                     a = a.substring(1);
-
+                    if(a.equals(delimiters[delimiters.length-1])){
+                        delimit1.append("(").append(a).append(")");
+                        delimit2.append("[").append(a).append("]");
+                    }else{
+                        delimit1.append("(").append(a).append(")").append("|");
+                        delimit2.append("[").append(a).append("]").append("|");
+                    }
                 }
                 try {
-                    values = Pattern.compile("(" + delimiter + ")").split(str[1]);
+                    values = Pattern.compile(delimit1.toString()).split(str[1]);
                 } catch (PatternSyntaxException e) {
-                    values = Pattern.compile("[" + delimiter.substring(delimiter.length() - 1) + "]{" + delimiter.length() + "}").split(str[1]);
+                    values = Pattern.compile(delimit2.toString().substring(delimiter.length() - 1) + "]{" + delimiter.length() + "}").split(str[1]);
                 }
             }else {
                 delimiter = str[0].substring(2);
