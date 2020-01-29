@@ -1,6 +1,6 @@
 import java.util.regex.Pattern;
 public class StringCalculator {
-    static int add(String input) throws IllegalArgumentException{
+    static int add(String input) throws Exception {
         int sum = 0;
         String[] values;
         String[] delimiters;
@@ -13,34 +13,21 @@ public class StringCalculator {
         }else if(input.startsWith("//")){
             String[] str = input.split("\n");
             if(Pattern.compile("[/]{2}(\\[).+(])(\\[).+(])").matcher(str[0]).matches()) {
-                String d = str[0].substring(2);
-                delimiters = d.split("]");
-                StringBuilder delimit2 = new StringBuilder();
-                for (String a : delimiters) {
-                    String escape = "\\";
-                        if (a.equals(delimiters[delimiters.length - 1])) {
-                            a = a.substring(1);
-                            if (a.contains("\\")) {
-                                a = a.replace("\\", "\\"+escape);
-                            }
-                            if (a.contains("-")) {
-                                a = a.replace("-", escape+"-");
-                            }
-                            delimit2.append("[").append(a).append("]").append("+");
-                        } else {
-                            a = a.substring(1);
-                            a = a.replace("-",escape+"-");
-                            a = a.replace("\\",escape+"\\");
-                            delimit2.append("[").append(a).append("]").append("+").append("|");
-                        }
+                delimiters = str[0].substring(2).split("]");
+                for (String a: delimiters) {
+                    a = a.substring(1);
+                    str[1] = str[1].replace(a,",");
                 }
-                        values = Pattern.compile(delimit2.toString()).split(str[1]);
+                values = str[1].split(",");
             }else {
                 delimiter = str[0].substring(2);
                 values = Pattern.compile("[" + delimiter + "]+").split(str[1]);
             }
         }else {
             values = input.split(",");
+        }
+        if(!Pattern.compile("^[/]{2}|^[\\d-]+").matcher(input.substring(0,3)).matches()){
+            throw new Exception("ERROR: invalid input");
         }
         for (String a: values) {
             if(Integer.parseInt(a)<0){
