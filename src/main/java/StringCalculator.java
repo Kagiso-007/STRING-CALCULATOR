@@ -27,7 +27,7 @@ public class StringCalculator {
         }else {
             values = input.split(",");
         }
-        if(input.startsWith(" ")|input.contains("//")&&!input.startsWith("//")|!Character.isDigit(input.charAt(input.length()-1))){
+        if(input.startsWith(" ")|input.contains("//")&&!input.startsWith("//")|!Character.isDigit(input.charAt(input.length()-1))) {
             throw new IllegalArgumentException("ERROR: invalid input");
         }
         for (String a: values) {
