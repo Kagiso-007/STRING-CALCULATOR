@@ -11,5 +11,6 @@ class StringCalculatorTest {
         assertEquals(3,StringCalculator.add("//;\n1000;1;2"));
         assertEquals(13,StringCalculator.add("//***\n10***1***2"));
         assertEquals(13,StringCalculator.add("//[***][%%%]\n1***9%%%3"));
+        assertThrows(IllegalArgumentException.class, ()-> StringCalculator.add("//;\n1000;1;2;"));
     }
 }
